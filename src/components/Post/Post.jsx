@@ -8,7 +8,9 @@ import NotLike from "../../img/notlike.png";
 const Post = ({ data }) => {
   return (
     <div className="Post">
-      <img className="postImage" src={data.img} alt="post_image" />
+      <div className="img_container">
+        <img className="postImage" src={data.img} alt="post_image" />
+      </div>
       <div className="postReactions desc">
         <img src={data.liked ? Heart : NotLike} alt="heart-icon" />
         <img src={Comment} alt="comment-icon" />
