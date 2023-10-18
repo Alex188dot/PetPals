@@ -1,0 +1,28 @@
+.Post {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: var(--cardColor);
+  border-radius: 1rem;
+  width: 80%;
+}
+
+.postImage {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.postReactions {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.desc {
+  margin-bottom: 0.6rem;
+}
+
+.fullname {
+  margin-bottom: -1rem;
+}

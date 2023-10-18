@@ -38,3 +38,7 @@
   border: 2px solid var(--orange);
   background: transparent;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
