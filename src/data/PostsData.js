@@ -31,7 +31,7 @@ export const PostsData = [
   {
     img: corgi,
     name: "Jane Doe",
-    desc: "Look who's taking over the computer! My adorable corgi, sitting in front of my computer, ready to take over the world! 🐾💻 #corgi #computer #adorable",
+    desc: "My adorable corgi, sitting in front of my computer, ready to take over the world! 🐾💻 #corgi #computer #adorable",
     likes: 32,
     liked: false,
   },
@@ -45,7 +45,7 @@ export const PostsData = [
   {
     img: cozy_dog,
     name: "Jessica Dunn",
-    desc: "It's cold and rainy outside, perfect day for Max to stay in!! #cold #cozy",
+    desc: "It's cold and rainy outside 🌧️, perfect day for Max to stay in!! #cold #cozy",
     likes: 26,
     liked: false,
   },
