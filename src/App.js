@@ -5,9 +5,9 @@ import Profile from "./pages/profile/Profile";
 function App() {
   return (
     <div className="App">
-      <Home />
+      {/* <Home /> */}
       {/* <Profile /> */}
-      {/* <Auth /> */}
+      <Auth />
     </div>
   );
 }

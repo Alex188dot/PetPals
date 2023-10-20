@@ -16,7 +16,7 @@ const Auth = () => {
           </h6>
         </div>
       </div>
-      <Login />
+      <SignUp />
     </div>
   );
 };
@@ -46,9 +46,7 @@ function Login() {
           />
         </div>
         <div>
-          <span style={{ fontSize: "0.8rem" }}>
-            Don't have an account? Sign up
-          </span>
+          <span className="infoText">Don't have an account? Sign up</span>
         </div>
         <button className="button infoButton">Login</button>
       </form>
@@ -82,8 +80,7 @@ function SignUp() {
               name="username"
               id=""
               placeholder="Username"
-              className="infoInput"
-              style={{ width: "100%" }}
+              className="infoInput username"
             />
           </div>
           <div>
@@ -104,9 +101,7 @@ function SignUp() {
           </div>
         </div>
         <div>
-          <span style={{ fontSize: "0.8rem" }}>
-            Already have an account? Login
-          </span>
+          <span className="infoText">Already have an account? Login</span>
         </div>
         <bytton className="button infoButton">Sign Up</bytton>
       </form>
