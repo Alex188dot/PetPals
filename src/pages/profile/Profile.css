@@ -10,3 +10,29 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+@media (max-width: 1024px) {
+  .Profile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Profile-center {
+    order: 1;
+  }
+
+  .ProfileLeft {
+    order: 2;
+  }
+
+  .RightSide {
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .PostSide {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

@@ -30,13 +30,15 @@ const RightSide = () => {
 };
 
 function ShareModal({ open, opened, close }) {
+  const isMobile = window.innerWidth <= 767;
+
   return (
     <>
       <Modal
         opened={opened}
         onClose={close}
         title="Edit your info"
-        size="40%"
+        size={isMobile ? "95%" : "40%"}
         overlayProps={{
           backgroundOpacity: 0.55,
           blur: 3,

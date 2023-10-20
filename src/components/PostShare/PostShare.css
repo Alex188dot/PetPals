@@ -88,3 +88,41 @@
   border-radius: 0.5rem;
   margin-top: 1rem;
 }
+
+@media (max-width: 767px) {
+  .PostShare {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .PostShare > img {
+  }
+
+  .mantine-Modal-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .postOptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .inp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inp-happening {
+    width: 70%;
+  }
+}

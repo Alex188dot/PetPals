@@ -41,14 +41,16 @@ const InfoCard = () => {
 function ProfileModal() {
   const [opened, { open, close }] = useDisclosure(false);
   const buttonRef = useRef();
+  const isMobile = window.innerWidth <= 767;
 
   return (
     <>
       <Modal
+        className="infoModal"
         opened={opened}
         onClose={close}
         title="Edit your info"
-        size="40%"
+        size={isMobile ? "95%" : "40%"}
         overlayProps={{
           backgroundOpacity: 0.55,
           blur: 3,
@@ -56,14 +58,14 @@ function ProfileModal() {
       >
         <form className="infoForm">
           <h3>Your info</h3>
-          <div>
+          <div className="infoForm">
             <input
               className="infoInput"
               type="text"
               name="firstName"
               id=""
               placeholder="First Name"
-              style={{ marginRight: "1rem" }}
+              style={{ marginBottom: "-1rem" }}
             />
             <input
               className="infoInput"
@@ -71,10 +73,9 @@ function ProfileModal() {
               name="lastName"
               id=""
               placeholder="Last Name"
-              style={{ marginLeft: "1rem" }}
             />
           </div>
-          <div>
+          <div className="infoForm">
             <input
               className="infoInput"
               type="text"
@@ -84,14 +85,14 @@ function ProfileModal() {
               style={{ marginTop: "-1rem", width: "100%" }}
             />
           </div>
-          <div>
+          <div className="infoForm">
             <input
               className="infoInput"
               type="text"
               name="from"
               id=""
               placeholder="From"
-              style={{ marginRight: "1rem", marginTop: "-1rem" }}
+              style={{ marginTop: "-1rem" }}
             />
             <input
               className="infoInput"
@@ -99,15 +100,15 @@ function ProfileModal() {
               name="memberSince"
               id=""
               placeholder="Member since"
-              style={{ marginLeft: "1rem", marginTop: "-1rem" }}
+              style={{ marginTop: "-1rem" }}
             />
           </div>
-          <div>
-            <span style={{ marginRight: "1rem" }}>Profile Image</span>
+          <div className="infoForm">
+            <span>Profile Image</span>
             <input type="file" name="profileImg" id="" />
           </div>
-          <div>
-            <span style={{ marginRight: "1rem" }}>Cover Image</span>
+          <div className="infoForm">
+            <span>Cover Image</span>
             <input type="file" name="coverImg" id="" />
           </div>
           <button className="button infoButton">Update Info</button>
