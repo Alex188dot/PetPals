@@ -20,3 +20,10 @@
   width: 100%;
   align-self: center;
 }
+
+@media screen and (max-width: 900px) {
+  .RightSide {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
