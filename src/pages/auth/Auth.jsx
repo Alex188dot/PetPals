@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./Auth.css";
 import Logo from "../../components/Logo/Logo";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(true);
+  // const dispatch = useDispatch();
 
   const [data, setData] = useState({
     firstName: "",
@@ -21,11 +23,13 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (isSignUp) {
-      if (data.password !== data.confirmPassword) {
-        setConfirmPassword(false);
-      }
-    }
+    // if (isSignUp) {
+    //   data.password === data.confirmPassword
+    //     ? dispatch(signUp(data))
+    //     : setConfirmPassword(false);
+    // } else {
+    //   dispatch(login(data));
+    // }
   };
 
   const resetForm = () => {
@@ -50,7 +54,7 @@ const Auth = () => {
           <h1>Pet Pals</h1>
           <h6>
             The social media app for pet lovers to find and share pet-related
-            content.
+            content
           </h6>
         </div>
       </div>

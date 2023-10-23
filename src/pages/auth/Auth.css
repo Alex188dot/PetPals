@@ -25,7 +25,7 @@
 }
 
 .Webname > h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   background: var(--buttonBg);
   -webkit-background-clip: text;
   background-clip: text;
@@ -82,17 +82,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
+  }
+  .a-left {
+    flex-direction: column;
+  }
+
+  .Webname > h1 {
+    text-align: center;
+    font-size: 5rem;
+  }
+  .Webname > h6 {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }
 
 @media (min-width: 820px) {
   .authForm {
     margin-right: 1rem;
-  }
-}
-
-@media (max-width: 896px) {
-  .Auth {
-    overflow: auto;
   }
 }
