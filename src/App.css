@@ -45,6 +45,11 @@
   background: transparent;
 }
 
+.button:disabled {
+  background: silver;
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
