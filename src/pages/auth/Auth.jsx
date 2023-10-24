@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import "./Auth.css";
 import Logo from "../../components/Logo/Logo";
+import { login, signUp } from "../../action/AuthAction";
 
 const Auth = () => {
   const [isSignUp, setIsSignUp] = useState(true);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [data, setData] = useState({
     firstName: "",
@@ -15,7 +16,7 @@ const Auth = () => {
     confirmPassword: "",
   });
 
-  const [confirmPassword, setConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState(true);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -23,13 +24,13 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (isSignUp) {
-    //   data.password === data.confirmPassword
-    //     ? dispatch(signUp(data))
-    //     : setConfirmPassword(false);
-    // } else {
-    //   dispatch(login(data));
-    // }
+    if (isSignUp) {
+      data.password === data.confirmPassword
+        ? dispatch(signUp(data))
+        : setConfirmPassword(false);
+    } else {
+      dispatch(login(data));
+    }
   };
 
   const resetForm = () => {
