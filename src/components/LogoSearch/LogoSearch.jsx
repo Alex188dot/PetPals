@@ -6,7 +6,7 @@ import Logo from "../Logo/Logo";
 const LogoSearch = () => {
   return (
     <div className="LogoSearch">
-      <Logo />
+      <Logo style={{ fontSize: "2rem" }} />
       <div className="Search">
         <input type="text" placeholder="Search" />
         <div className="s-icon">

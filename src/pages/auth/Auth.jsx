@@ -48,7 +48,7 @@ const Auth = () => {
       {/* Left side */}
       <div className="a-left">
         <div className="auth-logo">
-          <Logo />
+          <Logo className="paw-logo-auth" />
         </div>
         <div className="Webname">
           <h1>Pet Pals</h1>
