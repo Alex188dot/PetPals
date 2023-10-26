@@ -2,6 +2,7 @@ import UserModel from "../models/UserModel.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+// Register User
 export const registerUser = async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -29,7 +30,6 @@ export const registerUser = async (req, res) => {
       user,
       token,
     });
-    res.status(200).json(newUser);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -45,7 +45,7 @@ export const loginUser = async (req, res) => {
     if (user) {
       const validity = await bcrypt.compare(password, user.password);
       if (!validity) {
-        res.status(400).json("Wrong password");
+        res.status(400).json({ message: "Wrong password" });
       } else {
         const token = jwt.sign(
           {
@@ -63,7 +63,10 @@ export const loginUser = async (req, res) => {
         });
       }
     } else {
-      res.status(400).json("User does not exist");
+      res.status(400).json({ message: "User does not exist" });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: error.message });
+  }
 };
