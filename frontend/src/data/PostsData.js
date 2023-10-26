@@ -10,7 +10,7 @@ export const PostsData = [
     img: dog_leash,
     name: "Katie Ralph",
     location: "New York, US",
-    desc: "My dog this morning was so ready to go on a walk 😄 #walk",
+    desc: "My dog this morning was sooo ready to go on a walk 😄 #walk",
     likes: 18,
     liked: true,
   },
