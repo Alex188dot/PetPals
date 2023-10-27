@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Auth.css";
 import Logo from "../../components/Logo/Logo";
-import { login, signUp } from "../../action/AuthAction";
+import { login, signUp } from "../../actions/AuthAction";
 
 const Auth = () => {
   const dispatch = useDispatch();
