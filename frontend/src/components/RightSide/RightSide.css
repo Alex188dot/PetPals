@@ -19,6 +19,7 @@
   height: 3rem;
   width: 100%;
   align-self: center;
+  margin-top: -1.5rem;
 }
 
 @media screen and (max-width: 900px) {

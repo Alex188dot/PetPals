@@ -23,8 +23,11 @@ const RightSide = () => {
       <TrendCard />
       <Button className="button r-button" onClick={open}>
         Share
-      </Button>{" "}
+      </Button>
       <ShareModal open={open} opened={opened} close={close} />
+      <Button className="button r-button" onClick={logout}>
+        Logout
+      </Button>
     </div>
   );
 };
@@ -50,4 +53,9 @@ function ShareModal({ open, opened, close }) {
   );
 }
 
+function logout() {
+  localStorage.removeItem("profile");
+  localStorage.removeItem("store");
+  window.location.href = "/auth";
+}
 export default RightSide;
