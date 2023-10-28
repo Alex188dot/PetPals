@@ -16,8 +16,15 @@ const Post = ({ data }) => {
           src={
             data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""
           }
-          alt="post_image"
+          alt={data.image ? "post-image" : ""}
         />
+      </div>
+      <div className="detail desc">
+        <div className="fullname">
+          <b>{data.name}</b>
+        </div>
+        <br />
+        <span> {data.desc}</span>
       </div>
       <div className="postReactions desc">
         <img src={data.liked ? Heart : NotLike} alt="heart-icon" />
@@ -30,13 +37,6 @@ const Post = ({ data }) => {
       >
         {data.likes} likes
       </span>
-      <div className="detail desc">
-        <div className="fullname">
-          <b>{data.name}</b>
-        </div>
-        <br />
-        <span> {data.desc}</span>
-      </div>
     </div>
   );
 };
