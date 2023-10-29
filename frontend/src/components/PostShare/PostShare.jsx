@@ -15,6 +15,7 @@ export const PostShare = () => {
   const dispatch = useDispatch();
   const desc = useRef();
   const { user } = useSelector((state) => state.authReducer.authData);
+  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -51,7 +52,14 @@ export const PostShare = () => {
   };
   return (
     <div className="PostShare">
-      <img src={ProfileImage} alt="profile_img" />
+      <img
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.jpg"
+        }
+        alt="profile_img"
+      />
       <div className="inp-container">
         <input
           type="text"

@@ -8,6 +8,7 @@ import TrendCard from "../TrendCard/TrendCard";
 import PostShare from "../PostShare/PostShare";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
+import { Link } from "react-router-dom";
 
 const RightSide = () => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -15,7 +16,9 @@ const RightSide = () => {
   return (
     <div className="RightSide">
       <div className="navIcons">
-        <img src={Home} alt="home" />
+        <Link to="/home">
+          <img src={Home} alt="home" />
+        </Link>
         <UilSetting />
         <img src={Noti} alt="notification" />
         <img src={Comment} alt="comment" />
