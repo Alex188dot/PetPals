@@ -28,7 +28,7 @@ const RightSide = () => {
         Share
       </Button>
       <ShareModal open={open} opened={opened} close={close} />
-      <Button className="button r-button" onClick={logout}>
+      <Button className="button r-button" onClick={handleLogout}>
         Logout
       </Button>
     </div>
@@ -56,9 +56,8 @@ function ShareModal({ open, opened, close }) {
   );
 }
 
-function logout() {
-  localStorage.removeItem("profile");
-  localStorage.removeItem("store");
-  window.location.href = "/auth";
+function handleLogout() {
+  localStorage.clear();
+  window.location.reload();
 }
 export default RightSide;
