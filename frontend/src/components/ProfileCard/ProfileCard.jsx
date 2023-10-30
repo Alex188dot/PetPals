@@ -31,7 +31,7 @@ export default function ProfileCard({ location }) {
         <span>
           {user.firstName} {user.lastName}
         </span>
-        <span>{user.work || user.relationship || "Write about yourself"}</span>
+        <span>{user.about || ""}</span>
       </div>
       <div className="followStatus">
         <hr />
@@ -67,7 +67,7 @@ export default function ProfileCard({ location }) {
             to={`/profile/${user._id}`}
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            My Profile
+            Profile
           </Link>
         </span>
       )}
