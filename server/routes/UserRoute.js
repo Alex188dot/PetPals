@@ -4,7 +4,7 @@ import {
   updateUser,
   deleteUser,
   followUser,
-  UnfollowUser,
+  unFollowUser,
   getAllUsers,
 } from "../controllers/UserController.js";
 
@@ -15,6 +15,6 @@ router.get("/:id", getUser);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 router.put("/:id/follow", followUser);
-router.put("/:id/unfollow", UnfollowUser);
+router.put("/:id/unfollow", unFollowUser);
 
 export default router;
