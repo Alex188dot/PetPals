@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { followUser, unFollowUser } from "../../actions/UserAction";
 
 const User = ({ person }) => {
-  const [persons, setPersons] = useState([]);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.authReducer.authData);
   const [following, setFollowing] = useState(

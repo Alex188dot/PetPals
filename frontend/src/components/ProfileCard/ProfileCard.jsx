@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 export default function ProfileCard({ location }) {
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user } = useSelector((state) => state.authReducer.authData);
-  const post = useSelector((state) => state.postReducer.posts);
+  const posts = useSelector((state) => state.postReducer.posts);
+
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
@@ -50,7 +51,7 @@ export default function ProfileCard({ location }) {
               <div className="vl"></div>
               <div className="follow">
                 <span>
-                  {post.filter((post) => post.userId === user._id).length}
+                  {posts.filter((post) => post.userId === user._id).length}
                 </span>
                 <span>Posts</span>
               </div>
