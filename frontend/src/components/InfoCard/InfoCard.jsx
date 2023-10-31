@@ -5,13 +5,11 @@ import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import * as UserApi from "../../api/UserRequest.js";
 import { uploadImage } from "../../actions/uploadAction";
 import { updateUser } from "../../actions/UserAction";
 
 const InfoCard = () => {
-  const dispatch = useDispatch();
   const params = useParams();
   const profileUserId = params.id;
   const [profileUser, setProfileUser] = useState({});
