@@ -119,29 +119,24 @@ function ProfileModal({ data }) {
         .catch((error) => {
           console.log(error);
         });
-
-      if (coverPicture) {
-        const data = new FormData();
-        const fileName = Date.now() + coverPicture.name;
-        console.log(fileName);
-        console.log(data);
-        data.append("name", fileName);
-        data.append("file", coverPicture);
-        data.append("upload_preset", "pet_pals");
-        axios
-          .post("https://api.cloudinary.com/v1_1/dufov2soa/image/upload", data)
-          .then((res) => {
-            UserData.coverPicture = res.data.public_id;
-            console.log(res);
-            console.log(res.data.public_id);
-            dispatch(uploadImage(data));
-            dispatch(updateUser(param.id, UserData));
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
+    } else if (coverPicture) {
+      const data = new FormData();
+      const fileName = Date.now() + coverPicture.name;
+      data.append("name", fileName);
+      data.append("file", coverPicture);
+      data.append("upload_preset", "pet_pals");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dufov2soa/image/upload", data)
+        .then((res) => {
+          UserData.coverPicture = res.data.public_id;
+          dispatch(uploadImage(data));
+          dispatch(updateUser(param.id, UserData));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
+
     dispatch(updateUser(param.id, UserData));
 
     close();
