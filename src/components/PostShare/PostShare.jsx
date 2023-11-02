@@ -8,6 +8,8 @@ import { UilSchedule } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useSelector, useDispatch } from "react-redux";
 import { uploadImage, uploadPost } from "../../actions/uploadAction";
+import axios from "axios";
+import { Image } from "cloudinary-react";
 
 export const PostShare = () => {
   const [image, setImage] = useState(null);
@@ -40,25 +42,32 @@ export const PostShare = () => {
       const fileName = Date.now() + image.name;
       data.append("name", fileName);
       data.append("file", image);
-      newPost.image = fileName;
-      try {
-        dispatch(uploadImage(data));
-      } catch (error) {
-        console.log(error);
-      }
+      data.append("upload_preset", "pet_pals");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dufov2soa/image/upload", data)
+        .then((res) => {
+          newPost.image = res.data.public_id;
+          dispatch(uploadImage(data));
+          dispatch(uploadPost(newPost));
+          reset();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      dispatch(uploadPost(newPost));
+      reset();
     }
-    dispatch(uploadPost(newPost));
-    reset();
   };
   return (
     <div className="PostShare">
-      <img
-        src={
-          user.profilePicture
-            ? serverPublic + user.profilePicture
-            : serverPublic + "defaultProfile.jpg"
+      <Image
+        className="ProfilePic2"
+        cloudName="dufov2soa"
+        publicId={
+          user.profilePicture ? user.profilePicture : "defaultProfile_qu4khz"
         }
-        alt="profile_img"
+        alt="profile-picture"
       />
       <div className="inp-container">
         <input
