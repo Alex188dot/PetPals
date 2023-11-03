@@ -6,6 +6,7 @@ import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
 import { useSelector } from "react-redux";
 import { likePost } from "../../api/PostsRequest";
+import { Image } from "cloudinary-react";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -21,12 +22,11 @@ const Post = ({ data }) => {
   return (
     <div className="Post">
       <div className="img_container">
-        <img
+        <Image
+          cloudName="dufov2soa"
           className="postImage"
-          src={
-            data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""
-          }
-          alt={data.image ? "post-image" : ""}
+          publicId={data.image}
+          alt="post-image"
         />
       </div>
       <div className="detail desc">

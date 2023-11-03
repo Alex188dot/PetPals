@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PetPals/static/css/main.c09fac2d.css",
+    "main.js": "/PetPals/static/js/main.60b4a140.js",
+    "static/media/paw_logo.png": "/PetPals/static/media/paw_logo.7ca683c37d510992bc6d.png",
+    "static/media/profileImg.jpg": "/PetPals/static/media/profileImg.43ea3b281a614e573fa0.jpg",
+    "index.html": "/PetPals/index.html",
+    "main.c09fac2d.css.map": "/PetPals/static/css/main.c09fac2d.css.map",
+    "main.60b4a140.js.map": "/PetPals/static/js/main.60b4a140.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c09fac2d.css",
+    "static/js/main.60b4a140.js"
+  ]
+}

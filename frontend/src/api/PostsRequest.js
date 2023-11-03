@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:3001" });
+const API = axios.create({
+  baseURL: "https://petpals-server.onrender.com",
+});
 
 export const getTimelinePosts = (id) => API.get(`/post/${id}/timeline`);
 

@@ -2,7 +2,7 @@
   "name": "starter",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "proxy": "https://petpals-server.onrender.com",
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
     "@mantine/core": "^4.2.1",
@@ -12,8 +12,9 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
     "axios": "^0.27.2",
+    "cloudinary-react": "^1.8.1",
+    "gh-pages": "^6.0.0",
     "react": "^17.0.2",
-    "react-app-rewired": "^2.2.1",
     "react-bootstrap": "^2.9.0",
     "react-dom": "^17.0.2",
     "react-redux": "^8.1.3",
@@ -23,11 +24,16 @@
     "web-vitals": "^2.1.0",
     "yarn": "^1.22.19"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.0"
+  },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "PORT=3000 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

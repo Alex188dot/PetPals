@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { followUser, unFollowUser } from "../../actions/UserAction";
+import { Image } from "cloudinary-react";
 
 const User = ({ person }) => {
   const dispatch = useDispatch();
@@ -8,7 +9,6 @@ const User = ({ person }) => {
   const [following, setFollowing] = useState(
     person.followers.includes(user._id)
   );
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   const handleFollow = async () => {
     following
@@ -19,11 +19,12 @@ const User = ({ person }) => {
   return (
     <div className="follower">
       <div>
-        <img
-          src={
+        <Image
+          cloudName="dufov2soa"
+          publicId={
             person.profilePicture
-              ? serverPublic + person.profilePicture
-              : serverPublic + "defaultProfile.jpg"
+              ? person.profilePicture
+              : "defaultProfile_qu4khz"
           }
           alt="follower_img"
           className="followerImg"

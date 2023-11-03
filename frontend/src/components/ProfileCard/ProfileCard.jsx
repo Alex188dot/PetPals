@@ -2,30 +2,30 @@ import React from "react";
 import "./ProfileCard.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Image } from "cloudinary-react";
 
 export default function ProfileCard({ location }) {
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user } = useSelector((state) => state.authReducer.authData);
   const posts = useSelector((state) => state.postReducer.posts);
 
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
-        <img
-          src={
-            user.coverPicture
-              ? serverPublic + user.coverPicture
-              : serverPublic + "defaultCover.jpg"
+        <Image
+          className="CoverPic"
+          cloudName="dufov2soa"
+          publicId={
+            user.coverPicture ? user.coverPicture : "ikeiplb7zpfmpjbqoa64"
           }
           alt="cover_picture"
         />
-        <img
-          src={
-            user.profilePicture
-              ? serverPublic + user.profilePicture
-              : serverPublic + "defaultProfile.jpg"
+        <Image
+          className="ProfilePic"
+          cloudName="dufov2soa"
+          publicId={
+            user.profilePicture ? user.profilePicture : "defaultProfile_qu4khz"
           }
-          alt=""
+          alt="profile-picture"
         />
       </div>
       <div className="ProfileName">

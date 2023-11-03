@@ -18,8 +18,6 @@
   justify-content: center;
 }
 
-// Left side
-
 .a-left {
   gap: 2rem;
 }
@@ -95,6 +93,27 @@
   .Webname > h6 {
     text-align: center;
     font-size: 1.2rem;
+  }
+
+  .auth-logo {
+    margin-bottom: -4rem;
+  }
+
+  .authForm {
+    margin-top: -4rem;
+  }
+}
+
+@media (max-width: 280px) {
+  .auth-logo {
+    display: none;
+  }
+  .authForm {
+    margin-top: -6rem;
+  }
+
+  h6 {
+    margin-top: -2rem;
   }
 }
 

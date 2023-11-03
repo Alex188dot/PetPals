@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import * as UserApi from "../../api/UserRequest.js";
 import { uploadImage } from "../../actions/uploadAction";
 import { updateUser } from "../../actions/UserAction";
+import axios from "axios";
 
 const InfoCard = () => {
   const params = useParams();
@@ -90,40 +91,54 @@ function ProfileModal({ data }) {
   const onImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       let img = e.target.files[0];
-      e.target.name === "profilePicture"
-        ? setProfilePicture(img)
-        : setCoverPicture(img);
+      if (e.target.name === "profilePicture") {
+        setProfilePicture(img);
+      } else if (e.target.name === "coverPicture") {
+        setCoverPicture(img);
+      }
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let UserData = formData;
+
     if (profilePicture) {
       const data = new FormData();
       const fileName = Date.now() + profilePicture.name;
       data.append("name", fileName);
       data.append("file", profilePicture);
-      UserData.profilePicture = fileName;
-      try {
-        dispatch(uploadImage(data));
-      } catch (error) {
-        console.log(error);
-      }
-      if (coverPicture) {
-        const data = new FormData();
-        const fileName = Date.now() + coverPicture.name;
-        data.append("name", fileName);
-        data.append("file", coverPicture);
-        UserData.coverPicture = fileName;
-        try {
+      data.append("upload_preset", "pet_pals");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dufov2soa/image/upload", data)
+        .then((res) => {
+          UserData.profilePicture = res.data.public_id;
           dispatch(uploadImage(data));
-        } catch (error) {
+          dispatch(updateUser(param.id, UserData));
+        })
+        .catch((error) => {
           console.log(error);
-        }
-      }
+        });
+    } else if (coverPicture) {
+      const data = new FormData();
+      const fileName = Date.now() + coverPicture.name;
+      data.append("name", fileName);
+      data.append("file", coverPicture);
+      data.append("upload_preset", "pet_pals");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dufov2soa/image/upload", data)
+        .then((res) => {
+          UserData.coverPicture = res.data.public_id;
+          dispatch(uploadImage(data));
+          dispatch(updateUser(param.id, UserData));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
+
     dispatch(updateUser(param.id, UserData));
+
     close();
   };
 
