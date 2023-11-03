@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Post.css";
 import Comment from "../../img/comment.png";
 import Share from "../../img/share.png";
@@ -7,12 +7,38 @@ import NotLike from "../../img/notlike.png";
 import { useSelector } from "react-redux";
 import { likePost } from "../../api/PostsRequest";
 import { Image } from "cloudinary-react";
+import { getUser } from "../../api/UserRequest";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
+  const [fullname, setFullname] = useState("");
 
   const [liked, setLiked] = useState(data.likes.includes(user._id));
   const [likes, setLikes] = useState(data.likes.length);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchFullName = async () => {
+      try {
+        const response = await getUser(data.userId);
+        const { firstName, lastName } = response.data;
+        if (isMounted) {
+          setFullname(`${firstName} ${lastName}`);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    if (data.userId) {
+      fetchFullName();
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [data.userId]);
 
   const handleLike = () => {
     setLiked((prev) => !prev);
@@ -31,7 +57,7 @@ const Post = ({ data }) => {
       </div>
       <div className="detail desc">
         <div className="fullname">
-          <b>{data.name}</b>
+          <b>{fullname}</b>
         </div>
         <br />
         <span> {data.desc}</span>
