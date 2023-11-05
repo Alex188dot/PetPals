@@ -33,6 +33,15 @@
   margin-left: 0.8rem;
 }
 
+.likes_num {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+#dark .likes_num {
+  color: white;
+}
+
 .fullname {
   margin-top: 0.5rem;
   margin-bottom: -0.7rem;

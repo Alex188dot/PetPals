@@ -4,7 +4,7 @@ import ProfileSide from "../../components/ProfileSide/ProfileSide";
 import PostSide from "../../components/PostSide/PostSide";
 import RightSide from "../../components/RightSide/RightSide";
 
-const Home = () => {
+const Home = ({ theme, toggleTheme }) => {
   const [keyword, setKeyword] = useState("");
 
   const handleSearch = (value) => {
@@ -15,7 +15,7 @@ const Home = () => {
     <div className="Home">
       <ProfileSide handleSearch={handleSearch} />
       <PostSide keyword={keyword} />
-      <RightSide />
+      <RightSide theme={theme} toggleTheme={toggleTheme} />
     </div>
   );
 };

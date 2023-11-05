@@ -5,7 +5,7 @@ import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import PostSide from "../../components/PostSide/PostSide";
 import RightSide from "../../components/RightSide/RightSide";
 
-const Profile = () => {
+const Profile = ({ theme, toggleTheme }) => {
   return (
     <div className="Profile">
       <ProfileLeft />
@@ -13,8 +13,7 @@ const Profile = () => {
         <ProfileCard location="profilePage" />
         <PostSide />
       </div>
-
-      <RightSide />
+      <RightSide toggleTheme={toggleTheme} theme={theme} />
     </div>
   );
 };

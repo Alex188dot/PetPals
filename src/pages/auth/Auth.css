@@ -108,6 +108,10 @@
   .auth-logo {
     display: none;
   }
+
+  .a-left {
+    margin-top: -3rem;
+  }
   .authForm {
     margin-top: -6rem;
   }

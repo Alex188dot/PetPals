@@ -10,6 +10,14 @@
   justify-content: space-evenly;
 }
 
+.icons {
+  color: black;
+}
+
+#dark .icons {
+  color: white;
+}
+
 .navIcons > img {
   width: 1.5rem;
   height: 1.5rem;
