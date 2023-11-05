@@ -37,7 +37,7 @@ Let's go back to the homepage for this. If you click on Photo you will be prompt
 
  <img width="1429" alt="Screenshot 2023-11-05 at 15 23 50" src="https://github.com/Alex188dot/PetPals/assets/117444853/5bac8cb5-31f2-43be-ba0b-d605fff95485">
 
-On the other hand if you are happy with the result, you can just click on Share and the post will appear in your timeline:
+On the other hand if you are happy with the result, you can just click on Share and the post will appear on your timeline:
 
 <img width="1424" alt="Screenshot 2023-11-05 at 15 24 17" src="https://github.com/Alex188dot/PetPals/assets/117444853/bae85808-c2fe-463b-a2f1-88ea39dd0704">
 
