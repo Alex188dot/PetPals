@@ -4,7 +4,7 @@ Pet Pals is a social media app for pet lovers, where users can share photos and 
 
 This responsive web app was built with the MERN stack (MongoDB, ExpressJS, React, NodeJS). The frontend is hosted on Vercel and the backend is hosted on render.com. 
 
-Please note the first time you access the web app and try to sign up or login, it will take about a minute for the server to respond, as this has been hosted on a free plan. The requests that come after the first (and within 15 minutes from the last one) will have a normal response time. 
+Please note the first time you access the web app and try to sign up or login, it will take about a minute for the server to respond, as this has been hosted on a free plan. The requests that come after the first one (and within 15 minutes from the last one) will have a normal response time. 
 
 You can access Pet Pals from the following link: https://pet-pals-pied.vercel.app/auth
 
