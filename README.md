@@ -12,7 +12,7 @@ You will be prompted to login with you credentials or sign up:
 
 <img width="1437" alt="Screenshot 2023-11-05 at 15 10 48" src="https://github.com/Alex188dot/PetPals/assets/117444853/59af71ef-5a37-40b5-802c-2884577b793d">
 
-after either option you will be able to access the homepage. On the left, under People you may know, you can follow or unfollow other users. Example below:
+Then you will be able to access the homepage. On the left, under People you may know, you can follow or unfollow other users. Example below:
 
 <img width="1436" alt="Screenshot 2023-11-05 at 15 18 00" src="https://github.com/Alex188dot/PetPals/assets/117444853/7b642a4f-dd5b-480e-9387-e70cbab7d889">
 
