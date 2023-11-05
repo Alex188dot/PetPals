@@ -52,7 +52,7 @@ const Post = ({ data }) => {
           cloudName="dufov2soa"
           className="postImage"
           publicId={data.image}
-          alt="post-image"
+          alt={data.image ? "post-image" : ""}
         />
       </div>
       <div className="detail desc">
