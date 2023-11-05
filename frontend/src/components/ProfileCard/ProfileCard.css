@@ -74,6 +74,10 @@
   justify-content: center;
 }
 
+#dark .follow span {
+  color: white;
+}
+
 .follow > span:nth-of-type(1) {
   font-weight: bold;
 }

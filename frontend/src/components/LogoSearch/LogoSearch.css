@@ -25,6 +25,12 @@
   outline: none;
 }
 
+#dark .Search input {
+  border: 2px solid var(--cardColor);
+  border-radius: 5px;
+  color: white;
+}
+
 .s-icon {
   display: flex;
   align-items: center;

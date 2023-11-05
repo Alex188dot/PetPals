@@ -3,11 +3,11 @@ import "./PostSide.css";
 import PostShare from "../PostShare/PostShare";
 import Posts from "../Posts/Posts";
 
-const PostSide = () => {
+const PostSide = ({ keyword }) => {
   return (
     <div className="PostSide">
       <PostShare />
-      <Posts />
+      <Posts keyword={keyword} />
     </div>
   );
 };

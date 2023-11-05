@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+#dark .PostShare input {
+  color: white;
+}
+
 .ProfilePic2 {
   border-radius: 50%;
   width: 3rem;

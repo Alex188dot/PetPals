@@ -1,27 +1,25 @@
 import React from "react";
 import "./RightSide.css";
-import Home from "../../img/home.png";
-import Noti from "../../img/noti.png";
-import Comment from "../../img/comment.png";
-import { UilSetting } from "@iconscout/react-unicons";
+import { UilSetting, UilHome, UilBell } from "@iconscout/react-unicons";
 import TrendCard from "../TrendCard/TrendCard";
 import PostShare from "../PostShare/PostShare";
 import { useDisclosure } from "@mantine/hooks";
 import { Modal, Button } from "@mantine/core";
 import { Link } from "react-router-dom";
+import ReactSwitch from "react-switch";
 
-const RightSide = () => {
+const RightSide = ({ theme, toggleTheme }) => {
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
     <div className="RightSide">
       <div className="navIcons">
         <Link to="/home">
-          <img src={Home} alt="home" />
+          <UilHome className="icons" />
         </Link>
-        <UilSetting />
-        <img src={Noti} alt="notification" />
-        <img src={Comment} alt="comment" />
+        <UilSetting className="icons" />
+        <UilBell className="icons" />
+        <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
       </div>
       <TrendCard />
       <Button className="button r-button" onClick={open}>
@@ -43,7 +41,7 @@ function ShareModal({ open, opened, close }) {
       <Modal
         opened={opened}
         onClose={close}
-        title="Edit your info"
+        title="Share a post"
         size={isMobile ? "95%" : "40%"}
         overlayProps={{
           backgroundOpacity: 0.55,

@@ -4,10 +4,10 @@ import LogoSearch from "../LogoSearch/LogoSearch";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import FollowersCard from "../FollowersCard/FollowersCard";
 
-const ProfileSide = () => {
+const ProfileSide = ({ handleSearch }) => {
   return (
     <div className="ProfileSide">
-      <LogoSearch />
+      <LogoSearch handleSearch={handleSearch} />
       <ProfileCard location="homepage" />
       <FollowersCard />
     </div>
