@@ -26,7 +26,7 @@ If you click on Profile on the left section, you will be redirected to your prof
 
 <img width="1429" alt="Screenshot 2023-11-05 at 15 19 49" src="https://github.com/Alex188dot/PetPals/assets/117444853/2f3ed1d8-f209-4361-95e7-99498ec20040">
 
-or add additional info, by clicking the pencil icon on the left. This will open a modal that looks like this:
+or add additional info about yourself, by clicking the pencil icon on the left. This will open a modal that looks like this:
 
 <img width="1423" alt="Screenshot 2023-11-05 at 15 20 04" src="https://github.com/Alex188dot/PetPals/assets/117444853/0707e6f7-a51d-47de-acb6-a765e104b51c">
 
